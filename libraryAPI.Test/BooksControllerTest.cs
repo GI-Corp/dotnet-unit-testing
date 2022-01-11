@@ -154,7 +154,7 @@ namespace libraryAPI.Test
             //Assert
             Assert.Equal(book.Author, author);
             Assert.Equal(book.Title, title);
-            Assert.Equal(book.Description, "Incorrect description.");
+            Assert.Equal(book.Description, "Basics of TDD in dotnet framework 2022.");
 
             //Arrange
             var incompleteBook = new Book()
