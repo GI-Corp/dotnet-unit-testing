@@ -7,7 +7,7 @@ using Library.API.Data.Models;
 
 namespace Library.API.Data.Models
 {
-    public class Library
+    public class Libra
     {
         public Guid Id { get; set; }
         [Required]

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Library.API.Data.Services
 {
-    public interface ILibraryService
+    public interface ILibraService
     {
-        IEnumerable<Book> GetAllBooks();
-        Library Create(Book book);
-        Library GetById(Guid id);
+        IEnumerable<Libra> GetAllLibraries();
+        Libra Create(Libra library);
+        Libra GetById(Guid id);
         void Remove(Guid id);
     }
 }
