@@ -1,11 +1,11 @@
 using System;
 using Xunit;
 using TodoApi.Models;
-using EfCore.TestSupport;
+
 
 namespace TodoApi.Tests;
 
-public class UnitTest1
+public class TodoApiTest
 {
     [Fact]
     public void Test1()
