@@ -1,16 +1,43 @@
+using System;
 using Xunit;
+using TodoApi.Models;
+using EfCore.TestSupport;
 
-namespace TodoApi.UnitTests.Services
+namespace TodoApi.Tests;
+
+public class UnitTest1
 {
-    public class PrimeService_IsPrimeShould
+    [Fact]
+    public void Test1()
     {
-        [Fact]
-        public void IsPrime_InputIs1_ReturnFalse()
-        {
-            var primeService = new PrimeService();
-            bool result = primeService.IsPrime(1);
+        var a = "hi";
+        Assert.Equal(a, "hi");
+    }
 
-            Assert.False(result, "1 should not be prime");
-        }
+    [Fact]
+    public void TestPostgreSqlUniqueClassOk()
+    {
+        var options = this.CreatePostgreSqlUniqueClassOptions<TodoContext>();
+        using var context = new TodoContext(options);
+    
+    }
+
+    [Fact]
+    public void TestEnsureDeletedEnsureCreatedOk()
+    {
+        var options = this.CreatePostgreSqlUniqueClassOptions<TodoContext>();
+        using var context = new TodoContext(options);
+    
+        context.Database.EnsureCreated();
+        context.Database.EnsureCreated();
+    }
+
+    [Fact]
+    public void TestEnsureCleanOk()
+    {
+        var options = this.CreatePostgreSqlUniqueClassOptions<TodoContext>();
+        using var context = new TodoContext(options);
+    
+        context.Database.EnsureClean(); 
     }
 }
