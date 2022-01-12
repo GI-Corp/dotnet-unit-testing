@@ -12,4 +12,12 @@ namespace TodoApi.Models
 
         public DbSet<TodoItem> TodoItems { get; set; } = null!;
     }
+
+    public class TestDbContext : DbContext
+{
+    public TestDbContext(DbContextOptions<TestDbContext> options)
+        : base(options) { }
+ 
+    public DbSet<TodoItem> TodoItems { get; set; }
+}
 }
